@@ -87,11 +87,11 @@ h2.sec{font-size:1.35rem;margin:36px 0 14px}
     </div>
   </div>
 
-  <a class="lnk" href="#journal">Journal →</a>
+  <a class="lnk" href="#journal">My Thoughts →</a>
 </div>
 
-<h1>I'm standing for <mark>[post]</mark>. Tell me what to fix.</h1>
-<p class="lead">I'd rather ask you than guess. Use the box below, it takes a minute.</p>
+<h1>I'm standing for <mark>Presidential Ellections</mark>. Tell me what to fix.</h1>
+<p class="lead">A proposal of the Junta, will be the proposal for the Junta. Use the box below, it goes to the <strong>Manifesto</strong>.</p>
 
 <div class="card big" id="suggest">
 <h2>What should change?</h2>
@@ -109,8 +109,8 @@ h2.sec{font-size:1.35rem;margin:36px 0 14px}
 </div>
 
 <div class="card" id="about">
-<h2>About me</h2>
-<p>A few plain lines about you: your year and branch, why you are standing, and what you want to be held to.</p>
+<h2>Chaitanya here, dap me up!</h2>
+<p>My motive for this run is  <strong>“A Real Change.”</strong>. Chaitanya Pandey is here to turn those voices into actions</p>
 </div>
 
 <h2 class="sec serif">What I'm promising</h2>
@@ -118,7 +118,7 @@ h2.sec{font-size:1.35rem;margin:36px 0 14px}
 </div>
 
 <div id="journal" class="hide">
-<div class="top"><a class="lnk" href="#">← Back</a><span class="name">Journal</span></div>
+<div class="top"><a class="lnk" href="#">← Back</a><span class="name">My Thoughts</span></div>
 <div id="posts"></div>
 </div>
 
@@ -129,15 +129,18 @@ h2.sec{font-size:1.35rem;margin:36px 0 14px}
 <script>
 /* ===== EDIT HERE: your promises. status: "Proposed" or "In discussion" ===== */
 var promises=[
- {t:"Longer library hours, especially during exams",s:"Proposed"},
- {t:"One public calendar for all events and clubs",s:"Proposed"},
+ {t:"Improved WiFi connectivity",s:"Proposed"},
+ {t:"Centrailized sports facilities and events",s:"Proposed"},
+ {t:"Weekly lift maintenance",s:"Proposed"},
+ {t:"Change of Uniform and weekly 2 non-uniform days",s:"Proposed"},
  {t:"Review of canteen prices and quality",s:"In discussion"},
- {t:"Fair booking for sports equipment and grounds",s:"In discussion"}
+ {t:"Skills & Arts Corner",s:"In discussion"}
 ];
 /* ===== EDIT HERE: journal posts, newest first ===== */
 var posts=[
- {d:"7 Oct",t:"Why the library should stay open longer",x:"Write the post here, the way you would say it to a friend.\n\nA blank line starts a new paragraph."},
- {d:"3 Oct",t:"What I heard from twenty students",x:"Second post goes here."}
+ {d:"7 Oct",t:"Communism: A Capitalistic outlook into it.",x:"Coming soon..."},
+ {d:"7 Oct",t:"Ambition is healthy, Comepetition might not be",x:"Coming soon..."},
+ {d:"5 Oct",t:"The pursuit of greatness",x:"Coming soon..."}
 ];
 function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
 document.getElementById("plist").innerHTML=promises.map(function(p,i){return'<li><span class="n">'+(i+1)+'</span><span><b>'+esc(p.t)+"</b><small>"+esc(p.s)+"</small></span></li>"}).join("");
