@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Name</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap">
+<style>
+:root{--bg:#f4efe4;--card:#fffdf8;--ink:#1d1b17;--mute:#6f6a5e;--acc:#f2b632;--acc2:#2c5b4a;--sh:#1d1b17;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1915;--card:#25231e;--ink:#f1ece0;--mute:#a39d8e;--acc:#f2b632;--acc2:#7cc3a6;--sh:#000}}
+:root[data-theme="dark"]{--bg:#1a1915;--card:#25231e;--ink:#f1ece0;--mute:#a39d8e;--acc:#f2b632;--acc2:#7cc3a6;--sh:#000}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:34rem;margin:0 auto;padding:20px 20px 72px}
+a{color:inherit}
+.serif,h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+.name{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:19px}
+.lnk{font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);border-radius:8px;padding:6px 12px;background:var(--card)}
+h1{font-size:clamp(2rem,9vw,2.7rem);line-height:1.1;font-weight:700;margin:0 0 12px}
+h1 mark{background:linear-gradient(transparent 58%,var(--acc) 58%);color:inherit;padding:0 2px}
+.lead{color:var(--mute);margin:0 0 28px}
+.card{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:20px;box-shadow:4px 4px 0 var(--sh);margin-bottom:26px}
+.card h2{font-size:1.35rem;margin:0 0 4px;font-weight:700}
+.card p{margin:0 0 10px}
+.sub{color:var(--mute);font-size:15px;margin-bottom:6px!important}
+.big{background:var(--acc);color:#1d1b17}
+.big .sub{color:#4a4126}
+label{display:block;font-size:14px;font-weight:600;margin:16px 0 5px}
+input,textarea{width:100%;font:inherit;color:#1d1b17;background:#fffdf8;border:1.5px solid #1d1b17;border-radius:8px;padding:10px 12px;outline:0}
+input:focus,textarea:focus{box-shadow:0 0 0 3px rgba(29,27,23,.25)}
+textarea{min-height:90px;resize:vertical}
+.btn{font:inherit;font-weight:700;background:#1d1b17;color:#fffdf8;border:1.5px solid #1d1b17;border-radius:8px;padding:11px 22px;margin-top:20px;cursor:pointer}
+.btn:active{transform:translate(2px,2px)}
+#ok{margin-top:12px;font-size:14px;font-weight:600}
+h2.sec{font-size:1.35rem;margin:36px 0 14px}
+.pl{list-style:none;margin:0;padding:0}
+.pl li{display:flex;gap:14px;background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.n{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.5rem;color:var(--acc2);line-height:1.2;min-width:1.4rem}
+.pl b{font-weight:600;display:block}
+.pl small{color:var(--mute);font-size:13px}
+.post{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:16px 18px;margin-bottom:14px}
+.post summary{cursor:pointer;list-style:none}
+.post summary::-webkit-details-marker{display:none}
+.post .d{font-size:13px;color:var(--mute)}
+.post h3{font-size:1.15rem;margin:2px 0 0;font-weight:700}
+.post .t{margin-top:12px;white-space:pre-line}
+.hide{display:none}
+</style>
+</head>
+<body>
+<main>
+
+<div id="home">
+<div class="top"><span class="name">Your Name</span><a class="lnk" href="#journal">Journal →</a></div>
+
+<h1>I'm standing for <mark>[post]</mark>. Tell me what to fix.</h1>
+<p class="lead">I'd rather ask you than guess. Use the box below, it takes a minute.</p>
+
+<div class="card big" id="suggest">
+<h2>What should change?</h2>
+<p class="sub">Name the problem, add an idea if you have one.</p>
+<form id="f" onsubmit="return false">
+<label for="a">The problem</label>
+<input id="a" autocomplete="off">
+<label for="b">Your suggestion</label>
+<textarea id="b"></textarea>
+<label for="c">Your name <span style="font-weight:400">(optional)</span></label>
+<input id="c" autocomplete="off">
+<button class="btn" id="go" type="button">Send it</button>
+<div id="ok" role="status"></div>
+</form>
+</div>
+
+<div class="card" id="about">
+<h2>About me</h2>
+<p>A few plain lines about you: your year and branch, why you are standing, and what you want to be held to.</p>
+</div>
+
+<h2 class="sec serif">What I'm promising</h2>
+<ul class="pl" id="plist"></ul>
+</div>
+
+<div id="journal" class="hide">
+<div class="top"><a class="lnk" href="#">← Back</a><span class="name">Journal</span></div>
+<div id="posts"></div>
+</div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+/* ===== EDIT HERE: your promises. status: "Proposed" or "In discussion" ===== */
+var promises=[
+ {t:"Longer library hours, especially during exams",s:"Proposed"},
+ {t:"One public calendar for all events and clubs",s:"Proposed"},
+ {t:"Review of canteen prices and quality",s:"In discussion"},
+ {t:"Fair booking for sports equipment and grounds",s:"In discussion"}
+];
+/* ===== EDIT HERE: journal posts, newest first ===== */
+var posts=[
+ {d:"7 Oct",t:"Why the library should stay open longer",x:"Write the post here, the way you would say it to a friend.\n\nA blank line starts a new paragraph."},
+ {d:"3 Oct",t:"What I heard from twenty students",x:"Second post goes here."}
+];
+function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
+document.getElementById("plist").innerHTML=promises.map(function(p,i){return'<li><span class="n">'+(i+1)+'</span><span><b>'+esc(p.t)+"</b><small>"+esc(p.s)+"</small></span></li>"}).join("");
+document.getElementById("posts").innerHTML=posts.map(function(p){return'<details class="post"><summary><div class="d">'+esc(p.d)+"</div><h3>"+esc(p.t)+'</h3></summary><div class="t">'+esc(p.x)+"</div></details>"}).join("");
+function route(){var j=location.hash==="#journal";document.getElementById("journal").className=j?"":"hide";document.getElementById("home").className=j?"hide":"";window.scrollTo(0,0)}
+window.addEventListener("hashchange",route);route();
+const SUPABASE_URL = "https://adaaypolvdbcyuaellws.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_fY5-dQYyu6sijArVl0YqKw_LyYgPL4v";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+document.getElementById("go").onclick = async function () {
+
+  const problem = document.getElementById("a").value.trim();
+  const suggestion = document.getElementById("b").value.trim();
+  const name = document.getElementById("c").value.trim();
+
+  const ok = document.getElementById("ok");
+  const button = document.getElementById("go");
+
+  if (!problem) {
+    ok.textContent = "Tell me the problem first.";
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = "Sending...";
+
+  const { error } = await supabaseClient
+  .from("suggestions")
+  .insert({
+    problem: problem,
+    suggestion: suggestion || null,
+    name: name || null
+  });
+
+  if (error) {
+    console.error(error);
+    ok.textContent = "Something went wrong. Please try again.";
+    button.disabled = false;
+    button.textContent = "Send it";
+    return;
+  }
+
+  ok.textContent = "Received. Thank you.";
+  document.getElementById("f").reset();
+
+  button.disabled = false;
+  button.textContent = "Send it";
+};
+</script>
+</body>
+</html>
