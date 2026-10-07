@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Your Name</title>
+<title>Chaitanya Pandey</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap">
 <style>
 :root{--bg:#f4efe4;--card:#fffdf8;--ink:#1d1b17;--mute:#6f6a5e;--acc:#f2b632;--acc2:#2c5b4a;--sh:#1d1b17;
@@ -16,6 +16,31 @@ main{max-width:34rem;margin:0 auto;padding:20px 20px 72px}
 a{color:inherit}
 .serif,h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif}
 .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+.identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.profile{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  object-fit:cover;
+  border:1.5px solid var(--ink);
+  flex-shrink:0;
+}
+
+.identity-text{
+  min-width:0;
+}
+
+.slogan{
+  color:var(--mute);
+  font-size:12px;
+  line-height:1.2;
+  margin-top:3px;
+}
 .name{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:19px}
 .lnk{font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);border-radius:8px;padding:6px 12px;background:var(--card)}
 h1{font-size:clamp(2rem,9vw,2.7rem);line-height:1.1;font-weight:700;margin:0 0 12px}
@@ -53,7 +78,17 @@ h2.sec{font-size:1.35rem;margin:36px 0 14px}
 <main>
 
 <div id="home">
-<div class="top"><span class="name">Your Name</span><a class="lnk" href="#journal">Journal →</a></div>
+<div class="top">
+  <div class="identity">
+    <img src="profile.jpg" alt="Chaitanya Pandey" class="profile">
+    <div class="identity-text">
+      <div class="name">Chaitanya Pandey</div>
+      <div class="slogan">A Real Change, for those who seek</div>
+    </div>
+  </div>
+
+  <a class="lnk" href="#journal">Journal →</a>
+</div>
 
 <h1>I'm standing for <mark>[post]</mark>. Tell me what to fix.</h1>
 <p class="lead">I'd rather ask you than guess. Use the box below, it takes a minute.</p>
