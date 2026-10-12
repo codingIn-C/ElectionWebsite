@@ -22,6 +22,20 @@ a{color:inherit}
   gap:10px;
 }
 
+.campaign-poster {
+  width: 100%;
+  margin: 0 auto 28px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.campaign-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .profile{
   width:46px;
   height:46px;
@@ -87,10 +101,17 @@ h2.sec{font-size:1.35rem;margin:36px 0 14px}
     </div>
   </div>
 
+<div class="campaign-poster">
+  <img
+    src="chaitanya-poster.png"
+    alt="Chaitanya Pandey — A Real Change"
+  >
+</div>
+
   <a class="lnk" href="#journal">My Thoughts →</a>
 </div>
 
-<h1>I'm standing for <mark>Presidential Ellections</mark>. Tell me what to fix.</h1>
+<h1>I'm standing for <mark>Departmental Elections</mark>. Tell me what to fix.</h1>
 <p class="lead">A proposal of the Junta, will be the proposal for the Junta. Use the box below, it goes to the <strong>Manifesto</strong>.</p>
 
 <div class="card big" id="suggest">
@@ -139,7 +160,7 @@ var promises=[
 /* ===== EDIT HERE: journal posts, newest first ===== */
 var posts=[
  {d:"7 Oct",t:"Communism: A Capitalistic outlook into it.",x:"Coming soon..."},
- {d:"7 Oct",t:"Ambition is healthy, Comepetition might not be",x:"Coming soon..."},
+ {d:"7 Oct",t:"Ambition is healthy, Competition might not be",x:"Coming soon..."},
  {d:"5 Oct",t:"The pursuit of greatness",x:"Coming soon..."}
 ];
 function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
