@@ -22,19 +22,6 @@ a{color:inherit}
   gap:10px;
 }
 
-.campaign-poster {
-  width: 100%;
-  margin: 0 auto 28px;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.campaign-poster img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
 
 .profile{
   width:46px;
@@ -54,7 +41,9 @@ a{color:inherit}
   font-size:12px;
   line-height:1.2;
   margin-top:3px;
+
 }
+
 .name{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:19px}
 .lnk{font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);border-radius:8px;padding:6px 12px;background:var(--card)}
 h1{font-size:clamp(2rem,9vw,2.7rem);line-height:1.1;font-weight:700;margin:0 0 12px}
@@ -86,6 +75,39 @@ h2.sec{font-size:1.35rem;margin:36px 0 14px}
 .post h3{font-size:1.15rem;margin:2px 0 0;font-weight:700}
 .post .t{margin-top:12px;white-space:pre-line}
 .hide{display:none}
+
+.intro-layout{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin:0 0 28px;
+}
+.intro-copy{flex:1;min-width:0}
+.intro-copy h1{margin:0 0 12px}
+.intro-copy .lead{margin:0}
+.intro-portrait{
+  flex:0 0 38%;
+  max-width:190px;
+  align-self:stretch;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  border-radius:10px;
+  background:transparent;
+}
+.intro-portrait img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+/* Keep the heading readable on narrow screens; the portrait scrolls normally. */
+@media (max-width:480px){
+  .intro-layout{gap:10px}
+  .intro-portrait{flex-basis:36%;max-width:150px}
+  .intro-copy h1{font-size:clamp(1.55rem,7vw,2rem)}
+}
+
 </style>
 </head>
 <body>
@@ -94,25 +116,25 @@ h2.sec{font-size:1.35rem;margin:36px 0 14px}
 <div id="home">
 <div class="top">
   <div class="identity">
-    <img src="profile.jpg" alt="Chaitanya Pandey" class="profile">
+    <img src="profile.png" alt="Chaitanya Pandey" class="profile">
     <div class="identity-text">
       <div class="name">Chaitanya Pandey</div>
       <div class="slogan">A Real Change, for those who seek</div>
     </div>
   </div>
 
-<div class="campaign-poster">
-  <img
-    src="poster.jpeg"
-    alt="Chaitanya Pandey — A Real Change"
-  >
-</div>
-
   <a class="lnk" href="#journal">My Thoughts →</a>
 </div>
 
-<h1>I'm standing for <mark>Departmental Elections</mark>. Tell me what to fix.</h1>
-<p class="lead">A proposal of the Junta, will be the proposal for the Junta. Use the box below, it goes to the <strong>Manifesto</strong>.</p>
+<section class="intro-layout" aria-label="Campaign introduction">
+  <div class="intro-copy">
+    <h1>I'm standing for <mark>Departmental Elections</mark>. Tell me what to fix.</h1>
+    <p class="lead">A proposal of the Junta, will be the proposal for the Junta. Use the box below, it goes to the <strong>Manifesto</strong>.</p>
+  </div>
+  <div class="intro-portrait">
+    <img src="poster.jpeg" alt="Chaitanya Pandey smiling and making a peace sign">
+  </div>
+</section>
 
 <div class="card big" id="suggest">
 <h2>What should change?</h2>
